@@ -3,7 +3,8 @@ package practice.spring.services;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import practice.spring.InvertedIndex;
+import practice.spring.abstracts.InvertedIndex;
+import practice.spring.ReviewIndex;
 import practice.spring.models.Review;
 import practice.spring.repositories.ReviewRepository;
 
@@ -15,7 +16,7 @@ public class ReviewService {
     @Autowired
     private ReviewRepository reviewRepository;
 
-    private InvertedIndex invertedIndex = new InvertedIndex();
+    private InvertedIndex invertedIndex = new ReviewIndex();
 
 
     public Optional<Review> findReviewById(long id) {
@@ -44,7 +45,7 @@ public class ReviewService {
         if(record.isEmpty()){
             return null;
         }
-        invertedIndex.update(id, review);
+        invertedIndex.update(record);
         record.get().setReview(review);
         return reviewRepository.save(record.get());
     }

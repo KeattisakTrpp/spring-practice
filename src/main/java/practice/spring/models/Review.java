@@ -21,7 +21,4 @@ public class Review {
     @Column(columnDefinition="TEXT")
     private String review;
 
-    public Review(String review) {
-        this.review = review;
-    }
 }
