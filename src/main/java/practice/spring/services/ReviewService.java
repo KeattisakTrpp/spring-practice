@@ -3,6 +3,7 @@ package practice.spring.services;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import practice.spring.exceptions.ResourceNotFoundException;
 import practice.spring.abstracts.InvertedIndex;
 import practice.spring.ReviewIndex;
 import practice.spring.models.Review;
@@ -20,7 +21,12 @@ public class ReviewService {
 
 
     public Optional<Review> findReviewById(long id) {
-        return  reviewRepository.findById(id);
+        Optional<Review> review = reviewRepository.findById(id);
+        if(review.isEmpty()) {
+            throw new ResourceNotFoundException("Review.class");
+//           throw new ResourceNotFoundException("Review not found");
+        }
+        return  review;
     }
 
     public List<Review> findReviewByKeyword(String query){
@@ -43,7 +49,7 @@ public class ReviewService {
     public Review updateReviewById(long id, String review) {
         Optional<Review> record = reviewRepository.findById(id);
         if(record.isEmpty()){
-            return null;
+            throw new ResourceNotFoundException("Review not found");
         }
         invertedIndex.update(record);
         record.get().setReview(review);
