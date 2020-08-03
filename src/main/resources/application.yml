@@ -9,3 +9,6 @@ spring:
             show-sql: true
     batch:
         initialize-schema: always
+server:
+    error:
+        include-message: always

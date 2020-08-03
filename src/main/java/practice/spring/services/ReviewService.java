@@ -23,8 +23,7 @@ public class ReviewService {
     public Optional<Review> findReviewById(long id) {
         Optional<Review> review = reviewRepository.findById(id);
         if(review.isEmpty()) {
-            throw new ResourceNotFoundException("Review.class");
-//           throw new ResourceNotFoundException("Review not found");
+           throw new ResourceNotFoundException("Review not found");
         }
         return  review;
     }
@@ -51,7 +50,7 @@ public class ReviewService {
         if(record.isEmpty()){
             throw new ResourceNotFoundException("Review not found");
         }
-        invertedIndex.update(record);
+        invertedIndex.update(record.get());
         record.get().setReview(review);
         return reviewRepository.save(record.get());
     }
