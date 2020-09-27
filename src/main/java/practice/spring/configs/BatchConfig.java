@@ -54,7 +54,7 @@ public class BatchConfig {
     public ItemWriter<Review> dbWriter() {
         return new JdbcBatchItemWriterBuilder<Review>()
                 .dataSource(dataSource)
-                .sql("INSERT INTO review VALUES (:reviewID, :review)")
+                .sql("INSERT INTO review VALUES (:reviewID, :review, 0)")
                 .beanMapped()
                 .build();
     }

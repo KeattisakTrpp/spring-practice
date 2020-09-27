@@ -1,6 +1,5 @@
 package practice.spring.models.review;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,7 +7,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="review")
-@AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class Review implements ReviewInterface {
