@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
-import practice.spring.models.Review;
+import practice.spring.models.review.Review;
 
 import javax.sql.DataSource;
 

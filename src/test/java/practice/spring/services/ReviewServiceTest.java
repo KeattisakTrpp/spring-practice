@@ -5,7 +5,7 @@ import org.jmock.Mockery;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import practice.spring.models.Review;
+import practice.spring.models.review.Review;
 import practice.spring.repositories.ReviewRepository;
 
 import java.util.ArrayList;

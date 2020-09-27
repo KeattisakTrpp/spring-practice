@@ -1,8 +1,8 @@
-package practice.spring;
+package practice.spring.models.index;
 
 
 import practice.spring.abstracts.InvertedIndex;
-import practice.spring.models.Review;
+import practice.spring.models.review.Review;
 
 import java.util.HashMap;
 import java.util.Map;

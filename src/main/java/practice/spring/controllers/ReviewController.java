@@ -2,7 +2,7 @@ package practice.spring.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import practice.spring.models.Review;
+import practice.spring.models.review.Review;
 import practice.spring.services.ReviewService;
 
 import java.util.List;

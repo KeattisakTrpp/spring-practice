@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import practice.spring.exceptions.ResourceNotFoundException;
 import practice.spring.abstracts.InvertedIndex;
-import practice.spring.ReviewIndex;
-import practice.spring.models.Review;
+import practice.spring.models.index.ReviewIndex;
+import practice.spring.models.review.Review;
 import practice.spring.repositories.ReviewRepository;
 
 import java.util.*;
